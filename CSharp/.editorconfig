@@ -4,6 +4,14 @@ root = true
 # C# ファイル
 [*.cs]
 charset = utf-8-bom
+
+# Blazor 関連
+# razor ファイル
+[*.razor]
+charset = utf-8-bom
+# css ファイル
+[*.css]
+charset = utf-8
 #### コア EditorConfig オプション ####
 
 # インデントと間隔
