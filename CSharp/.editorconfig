@@ -1,18 +1,8 @@
 # 上位ディレクトリから .editorconfig 設定を継承する場合は、以下の行を削除します
 root = true
 
-# C# ファイル
-[*.cs]
-charset = utf-8-bom
-
-# Blazor 関連
-# razor ファイル
-[*.razor]
-charset = utf-8-bom
-# css ファイル
-[*.css]
-charset = utf-8
-#### コア EditorConfig オプション ####
+#### コア EditorConfig オプション (全ファイル共通) ####
+[*]
 
 # インデントと間隔
 indent_size = 4
@@ -23,7 +13,18 @@ tab_width = 4
 end_of_line = crlf
 insert_final_newline = false
 
-#### .NET コーディング規則 ####
+#### 文字コード ####
+
+# C# / Blazor (razor) ファイル
+[*.{cs,razor}]
+charset = utf-8-bom
+
+# css ファイル
+[*.css]
+charset = utf-8
+
+#### .NET コーディング規則 (C# ファイルのみ) ####
+[*.cs]
 
 # using の整理
 dotnet_separate_import_directive_groups = false
@@ -119,7 +120,7 @@ csharp_style_prefer_readonly_struct_member = true
 # コード ブロックの設定
 csharp_prefer_braces = true
 csharp_prefer_simple_using_statement = true
-csharp_style_namespace_declarations = block_scoped
+csharp_style_namespace_declarations = file_scoped
 csharp_style_prefer_method_group_conversion = true
 csharp_style_prefer_primary_constructors = true
 csharp_style_prefer_top_level_statements = true
